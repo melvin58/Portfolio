@@ -84,11 +84,12 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .timelinePill {
-                width: 80%;
+                width: 60%;
                 background-color: white;
-                border-radius: 5px;
-                margin-top: 250px;
-                padding: 10px;
+                position: relative;
+                border-radius: 60px;
+                margin-top: 100px;
+                padding: 20px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .profilePictureInPill {
@@ -104,21 +105,62 @@
             }
             .interestCatPill {
                 background-color: white;
-                margin-right: 1000px;
-                border-radius: 10px;
+                border-radius: 50px;
                 padding: 10px;
                 border-width: 1px;
                 border-color: #Cccece;
                 border-style: solid;
+                position: relative;
             }
             .interestCatPill img {
                 height: 50px;
                 float: left;
+                margin-left: 10px;
             }
             .interestCatPill p {
                 margin-left: 10px;
+                margin-right: 10px;
                 float: right;
                 font-family: Verdana, sans-serif;
+            }
+            .timeline {
+                width: 80%;
+                background-color: black;
+                height: 10px;
+                border-radius: 10px;
+                position: relative;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+            .timelineInfoPillTop {
+                display: flex;
+                position: relative;
+            }
+            .timelineInfoPillTop .content p {
+                font-family: Verdana, sans-serif;
+                border-radius: 5px;
+                background-color: lightgrey;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 10px;
+            }
+            .timelineInfoPillBottom {
+                display: flex;
+                position: relative;
+            }
+            .timelineInfoPillBottom .content p {
+                font-family: Verdana, sans-serif;
+                border-radius: 5px;
+                background-color: lightgrey;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 10px;
+            }
+            .schoolCrestAndLogos {
+                height: 60px;
             }
         </style>
     </head>
@@ -150,15 +192,38 @@
                                 <tr>
                                     <th class="interestCatPill"><img src="Pictures/cloud.png"><p>Cloud</p></th>
                                     <th class="interestCatPill"><img src="Pictures/global-network.png"><p>Networking</p></th>
+                                    <th class="interestCatPill"><img src="Pictures/settings.png"><p>System Configuration</p></th>
                                 </tr>
                             </table>
                         </th>
                     </tr>
                 </table>
             </div>
-            <div class="timelinePill"></div>
+            <div class="timelinePill">
+                <div class="timelineInfoPillTop">
+                    <div class="content">
+                        <p>YangZheng Primary School</p>
+                    </div>
+                    <div class="content">
+                        <p>ITE College East</p>
+                    </div>
+                    <div class="content">
+                        <p>National Service</p>
+                    </div>
+                </div>
+                <div class="timeline"></div>
+                <div class="timelineInfoPillBottom">
+                    <div class="content">
+                        <p>Bartley Secondary School</p>
+                    </div>
+                    <div class="content">
+                        <p>Temasek Polytechnic</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a>
+        <a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a>
     </body>
 </html>
