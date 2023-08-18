@@ -91,6 +91,7 @@
                 margin-top: 100px;
                 padding: 20px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                z-index: -2;
             }
             .profilePictureInPill {
                 height: 10em;
@@ -134,10 +135,41 @@
                 right: 0;
                 left: 0;
                 margin: auto;
+                z-index: -1;
             }
             .timelineInfoPillTop {
                 display: flex;
                 position: relative;
+            }
+            .timelineInfoPillTop .content {
+                display: flex;
+                justify-content: center;
+                margin-left: 250px;
+            }
+            .timelineInfoPillTop .firstContent {
+                display: flex;
+                justify-content: center;
+
+            }
+            .timelineInfoPillTop .firstContent::after {
+                background-color: lightblue;
+                height: 30px;
+                width: 30px;
+                border-radius: 20px;
+                content: ' ';
+                position: absolute;
+                top: 60px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .timelineInfoPillTop .content::after {
+                background-color: lightblue;
+                height: 30px;
+                width: 30px;
+                border-radius: 20px;
+                content: ' ';
+                position: absolute;
+                top: 60px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .timelineInfoPillTop .content p {
                 font-family: Verdana, sans-serif;
@@ -147,9 +179,28 @@
                 margin-right: 10px;
                 padding: 10px;
             }
+            .timelineInfoPillTop .content p:hover {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .timelineInfoPillTop .firstContent p {
+                font-family: Verdana, sans-serif;
+                border-radius: 5px;
+                background-color: lightgrey;
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 10px;
+            }
+            .timelineInfoPillTop .firstContent p:hover {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
             .timelineInfoPillBottom {
                 display: flex;
                 position: relative;
+            }
+            .timelineInfoPillBottom .content {
+                margin-left: 230px;
+                display: flex;
+                justify-content: center;
             }
             .timelineInfoPillBottom .content p {
                 font-family: Verdana, sans-serif;
@@ -158,6 +209,19 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 padding: 10px;
+            }
+            .timelineInfoPillBottom.content p:hover {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .timelineInfoPillBottom .content::before{
+                background-color: lightblue;
+                height: 30px;
+                width: 30px;
+                border-radius: 20px;
+                content: ' ';
+                position: absolute;
+                bottom: 60px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .schoolCrestAndLogos {
                 height: 60px;
@@ -201,7 +265,7 @@
             </div>
             <div class="timelinePill">
                 <div class="timelineInfoPillTop">
-                    <div class="content">
+                    <div class="firstContent">
                         <p>YangZheng Primary School</p>
                     </div>
                     <div class="content">
@@ -220,6 +284,9 @@
                         <p>Temasek Polytechnic</p>
                     </div>
                 </div>
+            </div>
+            <div class="workExperiencePill">
+                
             </div>
         </div>
         <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a>
