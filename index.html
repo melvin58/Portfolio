@@ -91,7 +91,6 @@
                 margin-top: 100px;
                 padding: 20px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                z-index: -2;
             }
             .profilePictureInPill {
                 height: 10em;
@@ -135,7 +134,7 @@
                 right: 0;
                 left: 0;
                 margin: auto;
-                z-index: -1;
+                z-index: 0;
             }
             .timelineInfoPillTop {
                 display: flex;
@@ -149,7 +148,6 @@
             .timelineInfoPillTop .firstContent {
                 display: flex;
                 justify-content: center;
-
             }
             .timelineInfoPillTop .firstContent::after {
                 background-color: lightblue;
@@ -158,8 +156,9 @@
                 border-radius: 20px;
                 content: ' ';
                 position: absolute;
-                top: 60px;
+                top: 80px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                z-index: 2;
             }
             .timelineInfoPillTop .content::after {
                 background-color: lightblue;
@@ -168,8 +167,9 @@
                 border-radius: 20px;
                 content: ' ';
                 position: absolute;
-                top: 60px;
+                top: 80px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                z-index: 2;
             }
             .timelineInfoPillTop .content p {
                 font-family: Verdana, sans-serif;
@@ -178,6 +178,7 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 padding: 10px;
+                text-align: center;
             }
             .timelineInfoPillTop .content p:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -189,6 +190,7 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 padding: 10px;
+                text-align: center;
             }
             .timelineInfoPillTop .firstContent p:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -209,8 +211,9 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 padding: 10px;
+                text-align: center;
             }
-            .timelineInfoPillBottom.content p:hover {
+            .timelineInfoPillBottom .content p:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .timelineInfoPillBottom .content::before{
@@ -220,11 +223,54 @@
                 border-radius: 20px;
                 content: ' ';
                 position: absolute;
-                bottom: 60px;
+                bottom: 80px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .schoolCrestAndLogos {
                 height: 60px;
+            }
+            .contactMePill {
+                background-color: white;
+                display: flex;
+                position: relative;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-top: 80px;
+                border-radius: 20px;
+                padding: 20px;
+                font-family: Verdana, sans-serif;
+            }
+            .footerReferences {
+                background-color: black;
+                width: 100%;
+            }
+            .footerReferences a {
+
+            }
+            .footerReferences p {
+                color: white;
+            }
+            #linkedin {
+                width: 60px;
+            }
+            #gmail {
+                width: 60px;
+            }
+            #contactMeText {
+                font-weight: normal;
+            }
+            .icons {
+                display: flex;
+                justify-content: center;
+            }
+            .icons #linkedin {
+                margin-right: 10px;
+            }
+            .icons #gmail {
+                margin-left: 10px;
+            }
+            .links:hover {
+                transform: scale(1.1,1.1);
+                transition: transform 0.5s;
             }
         </style>
     </head>
@@ -266,31 +312,54 @@
             <div class="timelinePill">
                 <div class="timelineInfoPillTop">
                     <div class="firstContent">
-                        <p>YangZheng Primary School</p>
+                        <p>YangZheng Primary School <br> 2008-2013</p>
                     </div>
                     <div class="content">
-                        <p>ITE College East</p>
+                        <p>ITE College East <br> 2018-2020</p>
                     </div>
                     <div class="content">
-                        <p>National Service</p>
+                        <p>National Service <br> 2023-Present</p>
                     </div>
                 </div>
                 <div class="timeline"></div>
                 <div class="timelineInfoPillBottom">
                     <div class="content">
-                        <p>Bartley Secondary School</p>
+                        <p>Bartley Secondary School <br> 2013-2017</p>
                     </div>
                     <div class="content">
-                        <p>Temasek Polytechnic</p>
+                        <p>Temasek Polytechnic <br> 2020-2023</p>
                     </div>
                 </div>
             </div>
             <div class="workExperiencePill">
                 
             </div>
+            <div class="projectsPill"></div>
+            <div class="contactMePill">
+                <table>
+                    <tr>
+                        <th>
+                            <p id="contactMeText">Interested to reach out to me? <br> Link with me on LinkedIn or send me an email!</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;">
+                            <div class="icons">
+                                <a href="https://www.linkedin.com/in/melvin-ching-8a59b11a2/"><img id="linkedin" class="links" src="Pictures/linkedin.png"></a>
+                                <a href="mailto:melvinching58@gmail.com"><img id="gmail" class="links" src="Pictures/gmail.png"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a>
-        <a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a>
+        <div class="footerReferences">
+            <p>Icon Links</p>
+            <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a>
+            <a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a>
+            <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
+        </div>
     </body>
 </html>
