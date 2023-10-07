@@ -238,16 +238,21 @@
                 border-radius: 20px;
                 padding: 20px;
                 font-family: Verdana, sans-serif;
+                margin-bottom: 50px;
             }
             .footerReferences {
-                background-color: black;
+                background-color: #72766f;
                 width: 100%;
+                padding: 0;
             }
             .footerReferences a {
 
             }
             .footerReferences p {
                 color: white;
+            }
+            .footerReferences table {
+                margin: auto;
             }
             #linkedin {
                 width: 60px;
@@ -271,6 +276,42 @@
             .links:hover {
                 transform: scale(1.1,1.1);
                 transition: transform 0.5s;
+            }
+            .pillTitle {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+            .projectsPill {
+                background-color: white;
+                position: relative;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-top: 80px;
+                border-radius: 50px;
+                padding: 20px;
+            }
+            .projectsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+            .projects {
+                background-color: white;
+                margin-top: 80px;
+                border-radius: 50px;
+                padding: 20px;
+                font-family: Verdana, sans-serif;
+                width: 260px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: lightgrey;
+                max-width: 510px;
+            }
+            .projects:hover {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            html,body {
+                margin: 0;
+                padding: 0;
             }
         </style>
     </head>
@@ -310,6 +351,7 @@
                 </table>
             </div>
             <div class="timelinePill">
+                <h2 class="pillTitle">Education Timeline</h2>
                 <div class="timelineInfoPillTop">
                     <div class="firstContent">
                         <p>YangZheng Primary School <br> 2008-2013</p>
@@ -334,7 +376,21 @@
             <div class="workExperiencePill">
                 
             </div>
-            <div class="projectsPill"></div>
+            <div class="projectsPill">
+                <h2 class="pillTitle">Projects done by me</h2>
+                <div class="projectsContainer">
+                    <div class="projects">
+                        <h4>TheStash</h4>
+                        <p>Project done in: Apr 2022 - Apr 2022</p>
+                        <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
+                    </div>
+                    <div class="projects">
+                        <h4>Optimid</h4>
+                        <p>Project done in: Sept 2022 - Nov 2022</p>
+                        <p class="projectIntro">Worked on a dashboard website to provide users with graph metrics to visualize their Electrical appliances resource</p>
+                    </div>
+                </div>
+            </div>
             <div class="contactMePill">
                 <table>
                     <tr>
@@ -345,7 +401,7 @@
                     <tr>
                         <td style="width: 50%;">
                             <div class="icons">
-                                <a href="https://www.linkedin.com/in/melvin-ching-8a59b11a2/"><img id="linkedin" class="links" src="Pictures/linkedin.png"></a>
+                                <a href="https://www.linkedin.com/in/melvin-ching-8a59b11a2/" target="_blank"><img id="linkedin" class="links" src="Pictures/linkedin.png"></a>
                                 <a href="mailto:melvinching58@gmail.com"><img id="gmail" class="links" src="Pictures/gmail.png"></a>
                             </div>
                         </td>
@@ -354,12 +410,28 @@
             </div>
         </div>
         <div class="footerReferences">
-            <p>Icon Links</p>
-            <a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a>
-            <a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a>
-            <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
+            <table>
+                <tr>
+                    <th>
+                        <p>Icon Links</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td><a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a></td>
+                </tr>
+                <tr>    
+                    <td><a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a></td>
+                </tr>    
+                <tr>
+                    <td><a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
