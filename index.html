@@ -65,12 +65,12 @@
                 font-size: 40px;
             }
             .iconLinksTitle{
-                font-family: KG3;
+                font-family: OpenSansBold;
                 font-size: 30px;
             }
             .iconLinks{
-                font-family: KG3;
-                font-size: 25px;
+                font-family: OpenSansRegular;
+                font-size: 20px;
                 text-decoration: none;
             }
             .simpleIntro #last {
@@ -371,6 +371,21 @@
             .projectIntro {
                 font-family: OpenSansRegular;
             }
+            .sidebar {
+                display: flex;
+                flex-direction: column;
+                width: 100px;
+                height: 100px;
+                top: 200px;
+                background-color: white;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+                padding: 20px;
+                padding-bottom: 55px;
+                position: fixed;
+                align-items: center;
+                gap: 20px;
+            }
             html,body {
                 margin: 0;
                 padding: 0;
@@ -378,6 +393,10 @@
         </style>
     </head>
     <body>
+        <div class="sidebar">
+            <a href="https://www.linkedin.com/in/melvin-ching-8a59b11a2/" target="_blank"><img id="linkedin" class="links" src="Pictures/linkedin.png"></a>
+            <a href="mailto:melvinching58@gmail.com"><img id="gmail" class="links" src="Pictures/gmail.png"></a>
+        </div>
         <div class="profileSection">
             <img class="profilePicture" src="Pictures/profile.jpg">
             <div class="simpleIntro">
