@@ -16,6 +16,34 @@
                 font-family: KG3;
                 src: url(/Font/KgLoveYouThroughIt3-BOll.ttf);
             }
+            @font-face {
+                font-family: OpenSansLight;
+                src: url(/Font/NewSans/static/OpenSans-Light.ttf);
+            }
+            @font-face {
+                font-family: OpenSansLightItalic;
+                src: url(/Font/NewSans/static/OpenSans-LightItalic.ttf);
+            }
+            @font-face {
+                font-family: OpenSansRegular;
+                src: url(/Font/NewSans/static/OpenSans-Regular.ttf);
+            }
+            @font-face {
+                font-family: OpenSansRegularItalic;
+                src: url(/Font/NewSans/static/OpenSans-Italic.ttf);
+            }
+            @font-face {
+                font-family: OpenSansSemiBold;
+                src: url(/Font/NewSans/static/OpenSans-SemiBold.ttf);
+            }
+            @font-face {
+                font-family: OpenSansBold;
+                src: url(/Font/NewSans/static/OpenSans-Bold.ttf);
+            }
+            @font-face {
+                font-family: OpenSansExtraBold;
+                src: url(/Font/NewSans/static/OpenSans-ExtraBold.ttf);
+            }
             body {
                 width: fit-content;
                 height: fit-content;
@@ -33,24 +61,20 @@
                 border-radius: 50%;
             }
             .simpleIntro p {
-                font-family: KG1;
+                font-family: OpenSansLight;
                 font-size: 40px;
+            }
+            .iconLinksTitle{
+                font-family: KG3;
+                font-size: 30px;
+            }
+            .iconLinks{
+                font-family: KG3;
+                font-size: 25px;
+                text-decoration: none;
             }
             .simpleIntro #last {
                 -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,1));
-            }
-            .empty {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                margin-top: 717px;
-                height: 100px;
-                width: 40%;
-                background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
-                
             }
             .profileScrollDown {
                 min-height: 100px;
@@ -59,14 +83,14 @@
                 display: flex;
                 justify-content: center;
                 animation-name: scrollDownIcon;
-                animation-duration: 1s;
+                animation-duration: 1.5s;
                 animation-iteration-count: infinite;
-                animation-timing-function: ease-in-out;
+                animation-timing-function: linear;
                 animation-direction: alternate;
             }
             @keyframes scrollDownIcon {
                 from {margin-top: 0%;}
-                to {margin-top: 2%;}
+                to {margin-top: 2.5%;}
             }
             .partA {
                 background-color: black;
@@ -91,7 +115,7 @@
                 margin-top: 100px;
                 margin-bottom: 30px;
                 font-size: 1.2em;
-                font-family: KG3;
+                font-family: OpenSansRegularItalic;
             }
             .contentPage {
                 display: flex;
@@ -108,6 +132,10 @@
                 padding-left: 30px;
                 padding-right: 30px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .personalIntroPill p {
+                font-family: OpenSansRegular;
+                font-size: 18px;
             }
             .timelinePill {
                 width: 60%;
@@ -147,7 +175,7 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 float: right;
-                font-family: Verdana, sans-serif;
+                font-family: OpenSansBold;
             }
             .timeline {
                 width: 80%;
@@ -271,9 +299,6 @@
                 width: 100%;
                 padding: 0;
             }
-            .footerReferences a {
-
-            }
             .footerReferences p {
                 color: white;
             }
@@ -288,6 +313,7 @@
             }
             #contactMeText {
                 font-weight: normal;
+                font-family: OpenSansRegular;
             }
             .icons {
                 display: flex;
@@ -304,7 +330,7 @@
                 transition: transform 0.5s;
             }
             .pillTitle {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: OpenSansBold;
                 text-align: center;
             }
             .projectsPill {
@@ -322,10 +348,11 @@
             }
             .projects {
                 background-color: white;
-                margin-top: 80px;
                 border-radius: 50px;
-                padding: 20px;
-                font-family: Verdana, sans-serif;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 width: 260px;
                 border-style: solid;
                 border-width: 1px;
@@ -334,6 +361,15 @@
             }
             .projects:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .projectTitle {
+                font-family: OpenSansSemiBold;
+            }
+            .projectTimeline {
+                font-family: OpenSansSemiBold;
+            }
+            .projectIntro {
+                font-family: OpenSansRegular;
             }
             html,body {
                 margin: 0;
@@ -407,14 +443,14 @@
                 <h2 class="pillTitle">Projects done by me</h2>
                 <div class="projectsContainer">
                     <div class="projects">
-                        <h4>TheStash</h4>
-                        <p>Project done in: Apr 2022 - Apr 2022</p>
+                        <p class="projectTitle">TheStash</p>
+                        <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
                         <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
                     </div>
                     <div class="projects">
-                        <h4>Optimid</h4>
-                        <p>Project done in: Sept 2022 - Nov 2022</p>
-                        <p class="projectIntro">Worked on a dashboard website to provide users with graph metrics to visualize their Electrical appliances resource</p>
+                        <p class="projectTitle">Optimid</p>
+                        <p class="projectTimeline">Project done in: Sept 2022 - Nov 2022</p>
+                        <p class="projectIntro">I worked on a dashboard website to provide users with graph metrics to visualize their electrical appliances utilization rate.</p>
                     </div>
                 </div>
             </div>
@@ -440,23 +476,20 @@
             <table>
                 <tr>
                     <th>
-                        <p>Icon Links</p>
+                        <p class="iconLinksTitle">Icon Links</p>
                     </th>
                 </tr>
                 <tr>
-                    <td><a href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by kosonicon - Flaticon</a></td>
+                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/cloud" target="_blank" rel="noopener noreferrer" title="cloud icons">Cloud Icon</a></td>
                 </tr>
                 <tr>    
-                    <td><a href="https://www.flaticon.com/free-icons/internet" title="internet icons">Internet icons created by Freepik - Flaticon</a></td>
+                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/internet" target="_blank" rel="noopener noreferrer" title="internet icons">Networking Icon</a></td>
+                </tr>   
+                <tr>
+                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/gmail" target="_blank" rel="noopener noreferrer" title="gmail icons">Gmail Icon</a></td>
                 </tr>
                 <tr>
-                    <td><a href="https://www.yangzhengpri.moe.edu.sg/about-us/school-profile/school-crest-and-song/">YangZheng School Crest</a></td>
-                </tr>    
-                <tr>
-                    <td><a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Freepik - Flaticon</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a></td>
+                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/linkedin" target="_blank" rel="noopener noreferrer" title="linkedin icons">Linkedin Icon</a></td>
                 </tr>
             </table>
         </div>
