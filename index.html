@@ -92,6 +92,9 @@
                 from {margin-top: 0%;}
                 to {margin-top: 2.5%;}
             }
+            @keyframes expandProjectPill {
+
+            }
             .partA {
                 background-color: black;
                 width: 70px;
@@ -340,10 +343,12 @@
                 margin-top: 80px;
                 border-radius: 50px;
                 padding: 20px;
+                max-width: 60%;
             }
             .projectsContainer {
                 display: flex;
-                flex-wrap: wrap;
+                flex-flow: row wrap;
+                justify-content: center;
                 gap: 40px;
             }
             .projects {
@@ -352,12 +357,13 @@
                 padding-left: 20px;
                 padding-right: 20px;
                 padding-top: 10px;
-                padding-bottom: 10px;
+                padding-bottom: 30px;
                 width: 260px;
                 border-style: solid;
                 border-width: 1px;
                 border-color: lightgrey;
                 max-width: 510px;
+                word-wrap: break-word;
             }
             .projects:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -369,6 +375,9 @@
                 font-family: OpenSansSemiBold;
             }
             .projectIntro {
+                font-family: OpenSansRegular;
+            }
+            .projectDetails ol,li,p {
                 font-family: OpenSansRegular;
             }
             .sidebar {
@@ -461,16 +470,33 @@
             <div class="projectsPill">
                 <h2 class="pillTitle">Projects done by me</h2>
                 <div class="projectsContainer">
-                    <div class="projects">
+                    <div class="projects" id="p1" onclick="expandProject('p1')">
                         <p class="projectTitle">TheStash</p>
                         <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
                         <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
+                        <p class="projectDetails">
+                            <p>I received this project during my poly internship days at NCS. Then, my supervisor tasked me and my fellow group of friends, to come up with a website of any functionality and implement it through Azure's powerful cloud platform in a 3-tier web architecture which comprises of following 3 components:</p>
+                            <ol>
+                                <li>Client frontend website</li>
+                                <li>Server hosting website</li>
+                                <li>Database handling website data</li>
+                            </ol>
+                            <img style="height: 15%; width: 100%;" src="/Pictures/3-tier architecture.png">
+                            <p>The website has to be complete with full CRUD operations (CREATE,READ,UPDATE and DELETE) for users to operate. So I brainstormed and decided that I want to create a forum based website similar to stackoverflow, and began building it.</p>
+                            <img style="height: 15%; width: 100%;" src="/Pictures/SS2.png">
+                            <p>I made use of Visual Studio Code as my IDE (Integrated Development Envrionment) for coding, and coded the website in HTML, Javascript, CSS and Bootstrap language all in one Windows VM. Utilized XAMPP and MySQL workbench for development and testing, and used Github to work at home and version control my web application.</p>
+                            <p>After I had finished coding my website, I created a storage account at Azure Cloud, create and pulled my codes from Github to a local repository and began hosting it on Azure WebApp!</p>
+                        </p>
                     </div>
-                    <div class="projects">
+                    <div class="projects" id="p2" onclick="expandProject('p2')">
                         <p class="projectTitle">Optimid</p>
                         <p class="projectTimeline">Project done in: Sept 2022 - Nov 2022</p>
                         <p class="projectIntro">I worked on a dashboard website to provide users with graph metrics to visualize their electrical appliances utilization rate.</p>
+                        <p class="projectDetails">
+                            <p>test</p>
+                        </p>
                     </div>
+                    
                 </div>
             </div>
             <div class="contactMePill">
@@ -512,5 +538,11 @@
                 </tr>
             </table>
         </div>
+
+        <script>
+            function expandProject(id){
+                console.log(id)
+            }
+        </script>
     </body>
 </html>
