@@ -471,51 +471,57 @@
             <div class="projectsPill">
                 <h2 class="pillTitle">Projects done by me</h2>
                 <div class="projectsContainer">
-                    <div class="projects" id="p1" onclick="expandProject('p1')">
+                    <div class="projects" onclick="expandProject('p1')">
                         <p class="projectTitle">TheStash</p>
                         <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
                         <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
-                        <p class="projectDetails">
-                            <p>I received this project during my poly internship days at NCS. Then, my supervisor tasked me and my fellow group of friends, to come up with a website of any functionality and implement it through Azure's powerful cloud platform in a 3-tier web architecture which comprises of following 3 components:</p>
-                            <ol>
-                                <li>Client frontend website</li>
-                                <li>Server hosting website</li>
-                                <li>Database handling website data</li>
-                            </ol>
-                            <img style="height: 15%; width: 100%;" src="/Pictures/3-tier architecture.png">
-                            <p>The website has to be complete with full CRUD operations (CREATE,READ,UPDATE and DELETE) for users to operate. So I brainstormed and decided that I want to create a forum based website similar to stackoverflow, and began building it.</p>
-                            <img style="height: 15%; width: 100%;" src="/Pictures/SS2.png">
-                            <p>I made use of Visual Studio Code as my IDE (Integrated Development Envrionment) for coding, and coded the website in HTML, Javascript, CSS and Bootstrap language all in one Windows VM. Utilized XAMPP and MySQL workbench for development and testing, and used Github to work at home and version control my web application.</p>
-                            <p>After I had finished coding my website, I created a storage account at Azure Cloud, create and pulled my codes from Github to a local repository on Azure and began hosting it on Azure WebApp!</p>
-                        </p>
+                        <div class="projectDetailsHidden" id="p1" style="display: none;">
+                            <p class="projectDetails">
+                                <p>I received this project during my poly internship days at NCS. Then, my supervisor tasked me and my fellow group of friends, to come up with a website of any functionality and implement it through Azure's powerful cloud platform in a 3-tier web architecture which comprises of following 3 components:</p>
+                                <ol>
+                                    <li>Client frontend website</li>
+                                    <li>Server hosting website</li>
+                                    <li>Database handling website data</li>
+                                </ol>
+                                <img style="height: 15%; width: 100%;" src="/Pictures/3-tier architecture.png">
+                                <p>The website has to be complete with full CRUD operations (CREATE,READ,UPDATE and DELETE) for users to operate. So I brainstormed and decided that I want to create a forum based website similar to stackoverflow, and began building it.</p>
+                                <img style="height: 15%; width: 100%;" src="/Pictures/SS2.png">
+                                <p>I made use of Visual Studio Code as my IDE (Integrated Development Envrionment) for coding, and coded the website in HTML, Javascript, CSS and Bootstrap language all in one Windows VM. Utilized XAMPP and MySQL workbench for development and testing, and used Github to work at home and version control my web application.</p>
+                                <p>After I had finished coding my website, I created a storage account at Azure Cloud, create and pulled my codes from Github to a local repository on Azure and began hosting it on Azure WebApp!</p>
+                            </p>
+                        </div>
                     </div>
-                    <div class="projects" id="p2" onclick="expandProject('p2')">
+                    <div class="projects" onclick="expandProject('p2')">
                         <p class="projectTitle">Optimid</p>
                         <p class="projectTimeline">Project done in: Sept 2022 - Nov 2022</p>
                         <p class="projectIntro">I worked on a dashboard website to provide users with graph metrics to visualize their electrical appliances utilization rate.</p>
-                        <p class="projectDetails">
-                            <p>This project was assigned to me when I was in the last semester of my final year in Polytechnic. The idea was to design and work out an IoT environment on AWS Cloud, which my team had chosen smart household appliances to begin with.</p>
-                            <p>Our idea was to visualize and inform our users about their smart home appliances power usage, so that they can make adjustments if they find out any appliances has high power consumption rate.</p>
-                            <p>The design of our simple project is as such, we break our design into 3 parts:</p>
-                            <ol>
-                                <li>Client side smart home appliance simulated by IFTTT app</li>
-                                <li>Server side AWS EC2 instance serve as:</li>
-                                    <ul>
-                                        <li>Iot Sensor receiving IFTTT dweet.io messages which sends to MQTT</li>
-                                        <li>MQTT then acts as the broker which sends out messages by topics of interest</li>
-                                        <li>Subcriber of the topic then receives the messages and inputs data into the Database for the website</li>
-                                    </ul>
-                            </ol>
-                            <img style="width: 100%; height: 15%;" src="/Pictures/COSTinfra.png">
-                        <p>For my part I mainly worked on the design of the website and the input of data from the website and database.</p>
-                        <p>Here are some screenshots of the website i designed:</p>
-                        <img style="height: 15%; width: 100%;" src="/Pictures/COST website2.png">
-                        <img style="height: 15%; width: 100%;" src="/Pictures/COST website3.png">
-                        <img style="height: 15%; width: 100%;" src="/Pictures/COST website4.png">
-                        <img style="height: 15%; width: 100%;" src="/Pictures/COST website 5.png">
-                        </p>
+                        <div class="projectDetailsHidden" id="p2" style="display: none;">
+                            <p class="projectDetails">
+                                <p>This project was assigned to me when I was in the last semester of my final year in Polytechnic. The idea was to design and work out an IoT environment on AWS Cloud, which my team had chosen smart household appliances to begin with.</p>
+                                <p>Our idea was to visualize and inform our users about their smart home appliances power usage, so that they can make adjustments if they find out any appliances has high power consumption rate.</p>
+                                <p>The design of our simple project is as such, we break our design into 3 parts:</p>
+                                <ol>
+                                    <li>Client side smart home appliance simulated by IFTTT app</li>
+                                    <li>Server side AWS EC2 instance serve as:</li>
+                                        <ul>
+                                            <li>Iot Sensor receiving IFTTT dweet.io messages which sends to MQTT</li>
+                                            <li>MQTT then acts as the broker which sends out messages by topics of interest</li>
+                                            <li>Subcriber of the topic then receives the messages and inputs data into the Database for the website</li>
+                                        </ul>
+                                </ol>
+                                <img style="width: 100%; height: 15%;" src="/Pictures/COSTinfra.png">
+                            <p>For my part I mainly worked on the design of the website and the input of data from the website and database.</p>
+                            <p>Here are some screenshots of the website i designed:</p>
+                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website2.png">
+                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website3.png">
+                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website4.png">
+                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website 5.png">
+                            </p>
+                        </div>
                     </div>
-                    
+                    <div class="projects" id="p3" onclick="expandProject('p3')">
+                        <p class="projectTitle"></p>
+                    </div>
                 </div>
             </div>
             <div class="contactMePill">
@@ -560,7 +566,12 @@
 
         <script>
             function expandProject(id){
-                console.log(id)
+                console.log(id);
+                clickedProject = document.getElementById(id);
+                console.log(clickedProject.className)
+                clickedProject.style.display = "block";
+                clickedProject.classList.toggle("shown");
+                
             }
         </script>
     </body>
