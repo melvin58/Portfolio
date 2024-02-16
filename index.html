@@ -401,6 +401,9 @@
                 padding: 0;
             }
         </style>
+        <script>
+            projectShown = [];
+        </script>
     </head>
     <body>
         <div class="sidebar">
@@ -566,12 +569,28 @@
 
         <script>
             function expandProject(id){
-                console.log(id);
                 clickedProject = document.getElementById(id);
-                console.log(clickedProject.className)
-                clickedProject.style.display = "block";
-                clickedProject.classList.toggle("shown");
-                
+                if(projectShown.length == 0) {
+                        clickedProject.style.display = "block";
+                        clickedProject.classList.toggle("shown");
+                        projectShown.push(id)
+                }
+                else {
+                    prevClickedProject = document.getElementById(projectShown[0])
+                    prevClickedProject.style.display = "none";
+                    prevClickedProject.classList.toggle("shown");
+                    projectShown.pop(id)
+                    if (clickedProject.className.length != 26) {
+                    clickedProject.style.display = "block";
+                    clickedProject.classList.toggle("shown");
+                    projectShown.push(id)
+                    }
+                    else {
+                        clickedProject.style.display = "none";
+                        clickedProject.classList.toggle("shown");
+                        projectShown.pop(id)
+                    }
+                }
             }
         </script>
     </body>
