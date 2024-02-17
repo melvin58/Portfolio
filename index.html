@@ -93,7 +93,14 @@
                 to {margin-top: 2.5%;}
             }
             @keyframes expandProjectPill {
-
+                from {width: 15%;}
+                to {width: 100%;}
+            }
+            .clicked {
+                animation-name: expandProjectPill;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-direction: normal;
             }
             .partA {
                 background-color: black;
@@ -368,6 +375,7 @@
             }
             .projects:hover {
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                cursor: pointer;
             }
             .projectTitle {
                 font-family: OpenSansSemiBold;
@@ -474,7 +482,7 @@
             <div class="projectsPill">
                 <h2 class="pillTitle">Projects done by me</h2>
                 <div class="projectsContainer">
-                    <div class="projects" onclick="expandProject('p1')">
+                    <div class="projects" id="p1M" onclick="expandProject('p1')">
                         <p class="projectTitle">TheStash</p>
                         <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
                         <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
@@ -494,7 +502,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="projects" onclick="expandProject('p2')">
+                    <div class="projects" id="p2M" onclick="expandProject('p2')">
                         <p class="projectTitle">Optimid</p>
                         <p class="projectTimeline">Project done in: Sept 2022 - Nov 2022</p>
                         <p class="projectIntro">I worked on a dashboard website to provide users with graph metrics to visualize their electrical appliances utilization rate.</p>
@@ -521,9 +529,6 @@
                             <img style="height: 15%; width: 100%;" src="/Pictures/COST website 5.png">
                             </p>
                         </div>
-                    </div>
-                    <div class="projects" id="p3" onclick="expandProject('p3')">
-                        <p class="projectTitle"></p>
                     </div>
                 </div>
             </div>
@@ -571,24 +576,46 @@
             function expandProject(id){
                 clickedProject = document.getElementById(id);
                 if(projectShown.length == 0) {
-                        clickedProject.style.display = "block";
-                        clickedProject.classList.toggle("shown");
-                        projectShown.push(id)
-                }
-                else {
-                    prevClickedProject = document.getElementById(projectShown[0])
-                    prevClickedProject.style.display = "none";
-                    prevClickedProject.classList.toggle("shown");
-                    projectShown.pop(id)
-                    if (clickedProject.className.length != 26) {
+                    newId = id.concat("M");
+                    projectM = document.getElementById(newId);
+                    projectM.classList.toggle("clicked");
                     clickedProject.style.display = "block";
                     clickedProject.classList.toggle("shown");
                     projectShown.push(id)
-                    }
-                    else {
+                }
+                else {
+                    if (id == projectShown[0]) {
+                        newId = id.concat("M");
+                        projectM = document.getElementById(newId);
+                        projectM.classList.toggle("clicked");
                         clickedProject.style.display = "none";
                         clickedProject.classList.toggle("shown");
                         projectShown.pop(id)
+                    }
+                    else {
+                        prevClickedProject = document.getElementById(projectShown[0])
+                        newId = projectShown[0].concat("M");
+                        projectM = document.getElementById(newId);
+                        projectM.classList.toggle("clicked");
+                        prevClickedProject.style.display = "none";
+                        prevClickedProject.classList.toggle("shown");
+                        projectShown.pop(id)
+                        if (clickedProject.className.length != 26) {
+                            newId = id.concat("M");
+                            projectM = document.getElementById(newId);
+                            projectM.classList.toggle("clicked");
+                            clickedProject.style.display = "block";
+                            clickedProject.classList.toggle("shown");
+                            projectShown.push(id)
+                        }
+                        else {
+                            newId = id.concat("M");
+                            projectM = document.getElementById(newId);
+                            projectM.classList.toggle("clicked");
+                            clickedProject.style.display = "none";
+                            clickedProject.classList.toggle("shown");
+                            projectShown.pop(id)
+                        }
                     }
                 }
             }
