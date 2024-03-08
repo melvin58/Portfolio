@@ -97,11 +97,39 @@
                 from {width: 15%;}
                 to {width: 100%;}
             }
+            @keyframes scrollDownAnimation {
+                from {height: 10%; width: 20%;}
+                to {height: 70%; width: 60%;}
+            }
+            .scrolled {
+                animation-name: scrollDownAnimation;
+                animation-duration: 2s;
+                animation-timing-function: ease;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+            }
             .clicked {
                 animation-name: expandProjectPill;
                 animation-duration: 1s;
                 animation-timing-function: linear;
                 animation-direction: normal;
+            }
+            .fadingEffect {
+                position: absolute;
+                animation-fill-mode: forwards;
+                background: white;
+                width: 100%;
+                top: 0; bottom: 0; right: 0;
+                -webkit-animation: fadingEffect 5s ease normal;
+            }
+            @-webkit-keyframes fadingEffect { /*Chrome, Safari*/
+                0% {width: 100%;}
+                40% {width: 0%;}
+                60% {width: 0%;}
+                100% {width: 0%;}
+            }
+            #fading {
+                display: none;
             }
             .partA {
                 background-color: black;
@@ -135,7 +163,6 @@
                 margin-top: 150px;
             }
             .personalIntroPill {
-                width: fit-content;
                 max-width: 60%;
                 background-color: white;
                 border-radius: 60px;
@@ -165,6 +192,7 @@
                 height: 10em;
                 width: 10em;
                 border-radius: 50%;
+                float: left;
             }
             .personalIntroText {
                 text-align: left;
@@ -410,7 +438,12 @@
                 margin: 0;
                 padding: 0;
             }
-            .introHideable {
+            #intro {
+                display: block;
+                transition: display 5s linear;
+                position: relative;
+            }
+            #intro.introHideable {
                 display: none;
             }
             .timelineHideable {
@@ -445,24 +478,26 @@
             </div>
         </div>
         <div class="contentPage">
-            <div class="personalIntroPill">
+            <div class="personalIntroPill" id="personalIntroEle">
                 <table class="personalIntroPillTable">
                     <tr>
                         <th>
                             <img class="profilePictureInPill" src="Pictures/profile.jpg">
                         </th>
                         <th>
-                            <p class="personalIntroText introHideable">Allow me to introduce myself.</p>
-                            <p class="personalIntroText introHideable">Personally, I'm more of a configuration person in general for IT. Meaning, I like to work with IT configurations like setting up servers and Networking. </p> 
-                            <p class="personalIntroText introHideable"> I like to work in both individual and group setting. I can be both a team player and a team leader. For team player I love cooperating with people to deliver awesome IT solutions and products, for team leader I strive to coordinate people logically to finish tasks in a creative and effective manner </p> 
-                            <p class="personalIntroText introHideable"> Here are my interests in the IT field: </p>
-                            <table>
-                                <tr>
-                                    <th class="interestCatPill introHideable"><img src="Pictures/cloud.png"><p>Cloud</p></th>
-                                    <th class="interestCatPill introHideable"><img src="Pictures/global-network.png"><p>Networking</p></th>
-                                    <th class="interestCatPill introHideable"><img src="Pictures/settings.png"><p>System Configuration</p></th>
-                                </tr>
-                            </table>
+                            <div id="intro" class="introHideable">
+                                <p class="personalIntroText">Allow me to introduce myself.</p>
+                                <p class="personalIntroText">Personally, I'm more of a configuration person in general for IT. Meaning, I like to work with IT configurations like setting up servers and networking. I like to work in both individual and group setting. I can be both a team player and a team leader.</p>
+                                <p class="personalIntroText">For team player I love cooperating with people to deliver awesome IT solutions and products, for team leader I strive to coordinate people logically to finish tasks in a creative and effective manner. Here are my interests in the IT field: </p>
+                                <table>
+                                    <tr>
+                                        <th class="interestCatPill"><img src="Pictures/cloud.png"><p>Cloud</p></th>
+                                        <th class="interestCatPill"><img src="Pictures/global-network.png"><p>Networking</p></th>
+                                        <th class="interestCatPill"><img src="Pictures/settings.png"><p>System Configuration</p></th>
+                                    </tr>
+                                </table>
+                                <div id="fading" class="fadingEffect"></div>
+                            </div>
                         </th>
                     </tr>
                 </table>
@@ -584,9 +619,33 @@
         </div>
 
         <script>
+            function wordplay(wordsToShow){
+                wordsToShow = "<p class='personalIntroText'>Allow me to introduce myself.</p> <p class='personalIntroText'>Personally, I'm more of a configuration person in general for IT. Meaning, I like to work with IT configurations like setting up servers and Networking. </p> <p class='personalIntroText'> I like to work in both individual and group setting. I can be both a team player and a team leader. For team player I love cooperating with people to deliver awesome IT solutions and products, for team leader I strive to coordinate people logically to finish tasks in a creative and effective manner </p> <p class='personalIntroText'> Here are my interests in the IT field: </p>"
+                setInterval(function(){
+
+                })
+            }
             function scrollAni(){
-                const rect = document.body.getBoundingClientRect();
-                console.log(rect.top)
+                const rect = document.documentElement;
+                console.log(rect.scrollTop)
+                if(rect.scrollTop > 250){
+                    //document.getElementById("intro").classList.remove("introHideable");
+                    document.getElementById("personalIntroEle").classList.add('scrolled');
+                    
+                    /*>300
+                    >500
+                    >700*/
+                }
+                /*const personalIntroEle = document.getElementById("personalIntroEle");
+                const personalIntroEleRect = personalIntroEle.getBoundingClientRect();
+                console.log(personalIntroEleRect.top);
+                if(personalIntroEleRect.top == 690) {
+                    console.log("hi")
+                    scrolledElement = document.getElementById("personalIntroEle");
+                    scrolledElement.classList.toggle(scrolled);
+                    scrolledElement.style.display = "block";
+                }*/
+                //console.log(rect.top)
             }
             function expandProject(id){
                 clickedProject = document.getElementById(id);
