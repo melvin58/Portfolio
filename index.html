@@ -7,6 +7,7 @@
         <link rel="icon" type="image/x-icon" href="Pictures/profile.jpg">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
         <style>
             @font-face {
                 font-family: KG1;
@@ -45,7 +46,7 @@
                 src: url(/Font/NewSans/static/OpenSans-ExtraBold.ttf);
             }
             body {
-                background: linear-gradient(0deg, rgba(255,255,255, 70%), rgba(168,247,247, 100%)), url(Pictures/mountain.jpg);
+                background: rgb(45, 75, 75);
                 background-repeat: repeat;
                 background-size: cover;
                 display: flex;
@@ -64,6 +65,7 @@
             .simpleIntro p {
                 font-family: OpenSansLight;
                 font-size: 40px;
+                color: white;
             }
             .iconLinksTitle{
                 font-family: OpenSansBold;
@@ -74,11 +76,9 @@
                 font-size: 20px;
                 text-decoration: none;
             }
-            .simpleIntro #last {
-                -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,1));
-            }
             .profileScrollDown {
                 min-height: 100px;
+                margin-top: 100px;
             }
             .scrollDownIcon {
                 display: flex;
@@ -103,7 +103,7 @@
             }
             .scrolled {
                 animation-name: scrollDownAnimation;
-                animation-duration: 2s;
+                animation-duration: 1s;
                 animation-timing-function: ease;
                 animation-direction: normal;
                 animation-fill-mode: forwards;
@@ -155,12 +155,25 @@
                 margin-bottom: 30px;
                 font-size: 1.2em;
                 font-family: OpenSansRegularItalic;
+                color: white;
             }
             .contentPage {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
                 margin-top: 150px;
+            }
+            .scroll-reveal.active {
+                animation-name: scrollDownAnimation;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+            }
+            .scroll-reveal.active p{
+                transition: display, 5s linear;
+                display: block;
+                position: relative;
             }
             .personalIntroPill {
                 max-width: 60%;
@@ -178,6 +191,7 @@
             .personalIntroPill p {
                 font-family: OpenSansRegular;
                 font-size: 18px;
+                display: none;
             }
             .timelinePill {
                 max-width: 60%;
@@ -353,6 +367,7 @@
             #contactMeText {
                 font-weight: normal;
                 font-family: OpenSansRegular;
+                font-size: 18px;
             }
             .icons {
                 display: flex;
@@ -401,10 +416,6 @@
                 word-wrap: break-word;
                 height: fit-content;
             }
-            .projects:hover {
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                cursor: pointer;
-            }
             .projectTitle {
                 font-family: OpenSansSemiBold;
             }
@@ -438,30 +449,12 @@
                 margin: 0;
                 padding: 0;
             }
-            #intro {
-                display: block;
-                transition: display 5s linear;
-                position: relative;
-            }
-            #intro.introHideable {
-                display: none;
-            }
-            .timelineHideable {
-                display: none;
-            }
-            .projectHideable {
-                display: none;
-            }
         </style>
         <script>
             projectShown = [];
         </script>
     </head>
-    <body onscroll="scrollAni()">
-        <div class="sidebar">
-            <a href="https://www.linkedin.com/in/melvin-ching-8a59b11a2/" target="_blank"><img id="linkedin" class="links" src="Pictures/linkedin.png"></a>
-            <a href="mailto:melvinching58@gmail.com"><img id="gmail" class="links" src="Pictures/gmail.png"></a>
-        </div>
+    <body>
         <div class="profileSection">
             <img class="profilePicture" src="Pictures/profile.jpg">
             <div class="simpleIntro">
@@ -470,30 +463,26 @@
                 <p id="last">Welcome to my portfolio.</p>
             </div>
             <div class="profileScrollDown">
-                <p class="scrollDownText">Scroll down to see more</p>
-                <div class="scrollDownIcon">
-                    <div class="partA"></div>
-                    <div class="partB"></div>
-                </div>
-            </div>
+                <dotlottie-player src="https://lottie.host/23c7d3bb-5379-4013-9954-2be887aed21b/Mbd3VMQ8hC.json" background="transparent" speed="1" style="width: 100px; height: 100px; margin: auto;" loop autoplay></dotlottie-player>
+            </div>        
         </div>
         <div class="contentPage">
-            <div class="personalIntroPill" id="personalIntroEle">
+            <div class="personalIntroPill scroll-reveal">
                 <table class="personalIntroPillTable">
                     <tr>
                         <th>
                             <img class="profilePictureInPill" src="Pictures/profile.jpg">
                         </th>
                         <th>
-                            <div id="intro" class="introHideable">
-                                <p class="personalIntroText">Allow me to introduce myself.</p>
-                                <p class="personalIntroText">Personally, I'm more of a configuration person in general for IT. Meaning, I like to work with IT configurations like setting up servers and networking. I like to work in both individual and group setting. I can be both a team player and a team leader.</p>
-                                <p class="personalIntroText">For team player I love cooperating with people to deliver awesome IT solutions and products, for team leader I strive to coordinate people logically to finish tasks in a creative and effective manner. Here are my interests in the IT field: </p>
+                            <div id="intro" class="introContent">
+                                <p class="personalIntroText" id="content1"></p>
+                                <p class="personalIntroText" id="content2">Personally, I'm more of a configuration person in general for IT. Meaning, I like to work with IT configurations like setting up servers and networking. I like to work in both individual and group setting. I can be both a team player and a team leader.</p>
+                                <p class="personalIntroText" id="content3">For team player I love cooperating with people to deliver awesome IT solutions and products, for team leader I strive to coordinate people logically to finish tasks in a creative and effective manner. Here are my interests in the IT field: </p>
                                 <table>
                                     <tr>
-                                        <th class="interestCatPill"><img src="Pictures/cloud.png"><p>Cloud</p></th>
-                                        <th class="interestCatPill"><img src="Pictures/global-network.png"><p>Networking</p></th>
-                                        <th class="interestCatPill"><img src="Pictures/settings.png"><p>System Configuration</p></th>
+                                        <th class="interestCatPill" id="content4"><img src="Pictures/cloud.png"><p style="font-family: OpenSansRegular; font-size: 18px;">Cloud</p></th>
+                                        <th class="interestCatPill" id="content5"><img src="Pictures/global-network.png"><p style="font-family: OpenSansRegular; font-size: 18px;">Networking</p></th>
+                                        <th class="interestCatPill" id="content6"><img src="Pictures/settings.png"><p style="font-family: OpenSansRegular; font-size: 18px;">System Configuration</p></th>
                                     </tr>
                                 </table>
                                 <div id="fading" class="fadingEffect"></div>
@@ -502,9 +491,9 @@
                     </tr>
                 </table>
             </div>
-            <div class="timelinePill">
+            <div class="timelinePill scroll-reveal">
                 <h2 class="pillTitle">Education Timeline</h2>
-                <div class="timelineInfoPillTop timelineHideable">
+                <div class="timelineInfoPillTop">
                     <div class="firstContent">
                         <p>YangZheng Primary School <br> 2008-2013</p>
                     </div>
@@ -515,8 +504,8 @@
                         <p>National Service <br> 2023-Present</p>
                     </div>
                 </div>
-                <div class="timeline timelineHideable"></div>
-                <div class="timelineInfoPillBottom timelineHideable">
+                <div class="timeline"></div>
+                <div class="timelineInfoPillBottom">
                     <div class="content">
                         <p>Bartley Secondary School <br> 2013-2017</p>
                     </div>
@@ -525,56 +514,18 @@
                     </div>
                 </div>
             </div>
-            <div class="projectsPill">
+            <div class="projectsPill scroll-reveal">
                 <h2 class="pillTitle">Projects done by me</h2>
-                <div class="projectsContainer projectHideable">
-                    <div class="projects" id="p1M" onclick="expandProject('p1')">
+                <div class="projectsContainer">
+                    <div class="projects">
                         <p class="projectTitle">TheStash</p>
                         <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
                         <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
-                        <div class="projectDetailsHidden" id="p1" style="display: none;">
-                            <p class="projectDetails">
-                                <p>I received this project during my poly internship days at NCS. Then, my supervisor tasked me and my fellow group of friends, to come up with a website of any functionality and implement it through Azure's powerful cloud platform in a 3-tier web architecture which comprises of following 3 components:</p>
-                                <ol>
-                                    <li>Client frontend website</li>
-                                    <li>Server hosting website</li>
-                                    <li>Database handling website data</li>
-                                </ol>
-                                <img style="height: 15%; width: 100%;" src="/Pictures/3-tier architecture.png">
-                                <p>The website has to be complete with full CRUD operations (CREATE,READ,UPDATE and DELETE) for users to operate. So I brainstormed and decided that I want to create a forum based website similar to stackoverflow, and began building it.</p>
-                                <img style="height: 15%; width: 100%;" src="/Pictures/SS2.png">
-                                <p>I made use of Visual Studio Code as my IDE (Integrated Development Envrionment) for coding, and coded the website in HTML, Javascript, CSS and Bootstrap language all in one Windows VM. Utilized XAMPP and MySQL workbench for development and testing, and used Github to work at home and version control my web application.</p>
-                                <p>After I had finished coding my website, I created a storage account at Azure Cloud, create and pulled my codes from Github to a local repository on Azure and began hosting it on Azure WebApp!</p>
-                            </p>
-                        </div>
                     </div>
-                    <div class="projects" id="p2M" onclick="expandProject('p2')">
+                    <div class="projects">
                         <p class="projectTitle">Optimid</p>
                         <p class="projectTimeline">Project done in: Sept 2022 - Nov 2022</p>
                         <p class="projectIntro">I worked on a dashboard website to provide users with graph metrics to visualize their electrical appliances utilization rate.</p>
-                        <div class="projectDetailsHidden" id="p2" style="display: none;">
-                            <p class="projectDetails">
-                                <p>This project was assigned to me when I was in the last semester of my final year in Polytechnic. The idea was to design and work out an IoT environment on AWS Cloud, which my team had chosen smart household appliances to begin with.</p>
-                                <p>Our idea was to visualize and inform our users about their smart home appliances power usage, so that they can make adjustments if they find out any appliances has high power consumption rate.</p>
-                                <p>The design of our simple project is as such, we break our design into 3 parts:</p>
-                                <ol>
-                                    <li>Client side smart home appliance simulated by IFTTT app</li>
-                                    <li>Server side AWS EC2 instance serve as:</li>
-                                        <ul>
-                                            <li>Iot Sensor receiving IFTTT dweet.io messages which sends to MQTT</li>
-                                            <li>MQTT then acts as the broker which sends out messages by topics of interest</li>
-                                            <li>Subcriber of the topic then receives the messages and inputs data into the Database for the website</li>
-                                        </ul>
-                                </ol>
-                                <img style="width: 100%; height: 15%;" src="/Pictures/COSTinfra.png">
-                            <p>For my part I mainly worked on the design of the website and the input of data from the website and database.</p>
-                            <p>Here are some screenshots of the website i designed:</p>
-                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website2.png">
-                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website3.png">
-                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website4.png">
-                            <img style="height: 15%; width: 100%;" src="/Pictures/COST website 5.png">
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -596,27 +547,6 @@
                 </table>
             </div>
         </div>
-        <div class="footerReferences">
-            <table>
-                <tr>
-                    <th>
-                        <p class="iconLinksTitle">Icon Links</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/cloud" target="_blank" rel="noopener noreferrer" title="cloud icons">Cloud Icon</a></td>
-                </tr>
-                <tr>    
-                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/internet" target="_blank" rel="noopener noreferrer" title="internet icons">Networking Icon</a></td>
-                </tr>   
-                <tr>
-                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/gmail" target="_blank" rel="noopener noreferrer" title="gmail icons">Gmail Icon</a></td>
-                </tr>
-                <tr>
-                    <td><a class="iconLinks" href="https://www.flaticon.com/free-icons/linkedin" target="_blank" rel="noopener noreferrer" title="linkedin icons">Linkedin Icon</a></td>
-                </tr>
-            </table>
-        </div>
 
         <script>
             function wordplay(wordsToShow){
@@ -625,17 +555,26 @@
 
                 })
             }
-            function scrollAni(){
+            /*function scrollAni(){
                 const rect = document.documentElement;
-                console.log(rect.scrollTop)
-                if(rect.scrollTop > 250){
+                //console.log(rect.scrollTop)
+                if(rect.scrollTop == 250){
                     //document.getElementById("intro").classList.remove("introHideable");
                     document.getElementById("personalIntroEle").classList.add('scrolled');
-                    
+                    console.log("hi1");
                     /*>300
                     >500
                     >700*/
+                //}
+                /*else if(rect.scrollTop > 500){
+                    document.getElementById("timelineEle").classList.add('scrolled');
+                    console.log("hi2");
                 }
+                else if(rect.scrollTop > 700){
+                    document.getElementById("projectEle").classList.add('scrolled');
+                    console.log("hi3");
+                }
+                //console.log(document.getElementById("personalIntroEle").classList[1] == 'scrolled')
                 /*const personalIntroEle = document.getElementById("personalIntroEle");
                 const personalIntroEleRect = personalIntroEle.getBoundingClientRect();
                 console.log(personalIntroEleRect.top);
@@ -644,9 +583,9 @@
                     scrolledElement = document.getElementById("personalIntroEle");
                     scrolledElement.classList.toggle(scrolled);
                     scrolledElement.style.display = "block";
-                }*/
+                }
                 //console.log(rect.top)
-            }
+            /*}
             function expandProject(id){
                 clickedProject = document.getElementById(id);
                 if(projectShown.length == 0) {
@@ -693,6 +632,43 @@
                     }
                 }
             }
+            if(document.getElementById("personalIntroEle").classList[1] == 'scrolled'){
+                    contents = "Allow me to introduce myself.".split('');
+                    console.log(contents);
+                    for (i=0;i<contents.length;i++){
+                        document.getElementById("content1").innerHTML += contents[i];
+                    }
+            }*/
+            function scrollTrigger(selector, options = {}) {
+                let els = document.querySelectorAll(selector);
+                //The querySelectorAll function will return a nodes list, which we will be,
+                //converting it to an array
+                els = Array.from(els);
+                //Now we have the els array and we will be iterating over the elements array
+                els.forEach(el => {
+                    //addObserver function will attach the IntersestionObserver to the element
+                    //We will create this function next and pass the options object to the addObserver function
+                    addObserver(el, options);
+                })
+            }
+            function addObserver(el, options){
+                //We are creating a new IntersectionObserver instance
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        // entry.isIntersecting will be true if the element is visible
+                        if(entry.isIntersecting){
+                            entry.target.classList.add('active')
+                            // We are removing the observer from the element after adding the active class
+                            observer.unobserve(entry.target)
+                        }
+                    })
+                }, options) // Passing the options object to the observer
+                //Adding the observer to the element
+                observer.observe(el)
+            }
+            scrollTrigger('.scroll-reveal', {
+                rootMargin: '-200px'
+            })
         </script>
     </body>
 </html>
