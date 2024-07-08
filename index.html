@@ -172,7 +172,17 @@
                 animation-direction: normal;
                 animation-fill-mode: forwards;
             }
-            .scroll-reveal.active p{
+            .scroll-reveal.active .personalIntroText{
+                transition: display, 5s linear;
+                display: block;
+                position: relative;
+            }
+            .scroll-reveal.active .interestCatPillTable {
+                transition: display, 5s linear;
+                display: block;
+                position: relative;
+            }
+            .scroll-reveal.active .interestCatPillTable p {
                 transition: display, 5s linear;
                 display: block;
                 position: relative;
@@ -234,6 +244,9 @@
                 margin-right: 10px;
                 float: right;
                 font-family: OpenSansBold;
+            }
+            .interestCatPillTable {
+                display: none;
             }
             .timeline {
                 width: 80%;
@@ -410,11 +423,10 @@
                 padding-right: 20px;
                 padding-top: 10px;
                 padding-bottom: 30px;
-                width: 260px;
                 border-style: solid;
                 border-width: 1px;
                 border-color: lightgrey;
-                max-width: 510px;
+                max-width: 300px;
                 word-wrap: break-word;
                 height: fit-content;
             }
@@ -481,11 +493,11 @@
                                 <p class="personalIntroText">This can be seen as I am more of a configuration person when it comes to IT! I like to work with IT configurations like setting up servers and networking! I especially enjoyed my internship as a Cloud Executive at NCS previously where I would come up with dashboard designs for customers based on their needs, taking into account of the services they are monitoring to optimize and customize my dashboard accordingly!</p>
                                 <p class="personalIntroText">I love to work in both individual and group setting. 
                                     <ul class="personalIntroText">
-                                        <li>In individual setting I love to allocate my time and effort when it comes to tackling projects and would monitor my self strictly on the progress and requirements to ensure timely deliver of quality work.</li>
-                                        <li>For group setting I love cooperating with people to deliver awesome IT solutions and products, as I love to communicate ideas and help my team members in their work whenever I am able to do so.</li>
+                                        <li><p class="personalIntroText">In individual setting I love to allocate my time and effort when it comes to tackling projects and would monitor my self strictly on the progress and requirements to ensure timely deliver of quality work.</p></li>
+                                        <li><p class="personalIntroText">For group setting I love cooperating with people to deliver awesome IT solutions and products, as I love to communicate ideas and help my team members in their work whenever I am able to do so.</p></li>
                                     </ul></p>
                                 <p class="personalIntroText">Here are my interests in the IT field: </p>
-                                <table>
+                                <table class="interestCatPillTable">
                                     <tr>
                                         <th class="interestCatPill" id="content4"><img src="Pictures/cloud.png"><p style="font-family: OpenSansRegular; font-size: 18px;">Cloud</p></th>
                                         <th class="interestCatPill" id="content5"><img src="Pictures/global-network.png"><p style="font-family: OpenSansRegular; font-size: 18px;">Networking</p></th>
@@ -527,7 +539,12 @@
                     <div class="projects">
                         <p class="projectTitle">TheStash</p>
                         <p class="projectTimeline">Project done in: Apr 2022 - Apr 2022</p>
-                        <p class="projectIntro">I created a forum-like website named "TheStash" to implement 3-tier web architecture with Azure Cloud services.</p>
+                        <p class="projectIntro">I created a forum-like website named "TheStash" to be similar to StackOverflow to implement 3-tier web architecture with Azure Cloud services.</p>
+                        <p class="projectIntro">Tools and services used: <ul>
+                            <li>Azure Web App</li>
+                            <li>Azure MySQL</li>
+                            <li>GitHub</li>
+                        </ul></p>
                     </div>
                     <div class="projects">
                         <p class="projectTitle">Optimid</p>
